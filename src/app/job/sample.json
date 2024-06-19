@@ -1,0 +1,180 @@
+[
+  {
+    "jobTitle": "Front-end Developer",
+    "companyName": "Creative Solutions Ltd.",
+    "jobDescription": "Design and implement user interfaces for web applications. Ensure the technical feasibility of UI/UX designs. Optimize applications for maximum speed and scalability.",
+    "location": "Los Angeles, CA",
+    "jobType": "Front-end",
+    "skills": ["JavaScript", "React", "HTML", "CSS", "TypeScript"]
+  },
+  {
+    "jobTitle": "Front-end Engineer",
+    "companyName": "Tech Innovators Inc.",
+    "jobDescription": "Develop and maintain front-end features for various web applications. Collaborate with designers to improve usability and user experience.",
+    "location": "Austin, TX",
+    "jobType": "Front-end",
+    "skills": ["Angular", "Sass", "JavaScript", "HTML", "CSS"]
+  },
+  {
+    "jobTitle": "Front-end Web Developer",
+    "companyName": "WebWorks Co.",
+    "jobDescription": "Build and optimize web pages for maximum performance. Translate UI/UX designs into interactive applications.",
+    "location": "San Francisco, CA",
+    "jobType": "Front-end",
+    "skills": ["Vue.js", "HTML", "CSS", "JavaScript", "Webpack"]
+  },
+  {
+    "jobTitle": "UI Developer",
+    "companyName": "DesignPro",
+    "jobDescription": "Create responsive and adaptive user interfaces for various digital platforms. Work closely with back-end developers to integrate APIs.",
+    "location": "New York, NY",
+    "jobType": "Front-end",
+    "skills": ["JavaScript", "HTML", "CSS", "React", "Git"]
+  },
+  {
+    "jobTitle": "Front-end Software Engineer",
+    "companyName": "AppGenius",
+    "jobDescription": "Implement and maintain front-end components of web applications. Collaborate with back-end developers to enhance functionality.",
+    "location": "Seattle, WA",
+    "jobType": "Front-end",
+    "skills": ["JavaScript", "Angular", "HTML", "CSS", "RxJS"]
+  },
+  {
+    "jobTitle": "Back-end Developer",
+    "companyName": "ServerTech",
+    "jobDescription": "Develop and maintain server-side logic and databases. Ensure high performance and responsiveness to requests from the front-end.",
+    "location": "Chicago, IL",
+    "jobType": "Back-end",
+    "skills": ["Node.js", "Express", "MongoDB", "JavaScript", "APIs"]
+  },
+  {
+    "jobTitle": "Back-end Engineer",
+    "companyName": "DataFlow",
+    "jobDescription": "Design and implement scalable back-end systems. Manage and optimize databases and server infrastructure.",
+    "location": "Boston, MA",
+    "jobType": "Back-end",
+    "skills": ["Python", "Django", "PostgreSQL", "Docker", "REST APIs"]
+  },
+  {
+    "jobTitle": "Server-side Developer",
+    "companyName": "CoreTech",
+    "jobDescription": "Build and maintain server-side applications. Work on data storage solutions and API integrations.",
+    "location": "Houston, TX",
+    "jobType": "Back-end",
+    "skills": ["Java", "Spring Boot", "MySQL", "Kubernetes", "Microservices"]
+  },
+  {
+    "jobTitle": "Backend Software Engineer",
+    "companyName": "LogicWorks",
+    "jobDescription": "Develop server-side components and RESTful APIs. Optimize performance and scalability of the server-side infrastructure.",
+    "location": "Denver, CO",
+    "jobType": "Back-end",
+    "skills": ["Ruby on Rails", "Redis", "SQL", "GraphQL", "AWS"]
+  },
+  {
+    "jobTitle": "API Developer",
+    "companyName": "Interface Inc.",
+    "jobDescription": "Design and build robust APIs for various applications. Ensure seamless integration with front-end and third-party services.",
+    "location": "Atlanta, GA",
+    "jobType": "Back-end",
+    "skills": ["PHP", "Laravel", "REST", "OAuth", "SQL"]
+  },
+  {
+    "jobTitle": "Full Stack Developer",
+    "companyName": "Tech Solutions",
+    "jobDescription": "Work on both front-end and back-end development of web applications. Collaborate with cross-functional teams to deliver full-fledged solutions.",
+    "location": "San Diego, CA",
+    "jobType": "Full stack",
+    "skills": ["JavaScript", "React", "Node.js", "MongoDB", "Express"]
+  },
+  {
+    "jobTitle": "Full Stack Engineer",
+    "companyName": "Innovatech",
+    "jobDescription": "Develop and maintain full stack applications. Optimize code for performance and scalability.",
+    "location": "San Francisco, CA",
+    "jobType": "Full stack",
+    "skills": ["Python", "Django", "React", "PostgreSQL", "Docker"]
+  },
+  {
+    "jobTitle": "Web Developer",
+    "companyName": "CodeCraft",
+    "jobDescription": "Create and manage web applications, handling both front-end and back-end tasks. Ensure seamless user experience and efficient server-side functionality.",
+    "location": "Austin, TX",
+    "jobType": "Full stack",
+    "skills": ["JavaScript", "Vue.js", "Node.js", "SQL", "Firebase"]
+  },
+  {
+    "jobTitle": "Software Engineer",
+    "companyName": "DevWorks",
+    "jobDescription": "Develop scalable web applications with full stack expertise. Collaborate with designers and product managers to implement features.",
+    "location": "Seattle, WA",
+    "jobType": "Full stack",
+    "skills": ["Java", "Spring Boot", "Angular", "MySQL", "Docker"]
+  },
+  {
+    "jobTitle": "Full Stack Web Developer",
+    "companyName": "Web Dynamics",
+    "jobDescription": "Design and implement web applications from front-end to back-end. Maintain and enhance existing applications.",
+    "location": "New York, NY",
+    "jobType": "Full stack",
+    "skills": ["PHP", "Laravel", "Vue.js", "SQL", "AWS"]
+  },
+  {
+    "jobTitle": "Software Engineer",
+    "companyName": "Tech Innovators Inc.",
+    "jobDescription": "Responsible for developing, testing, and maintaining software applications. Collaborate with cross-functional teams to define and design new features. Troubleshoot and debug software issues.",
+    "location": "San Francisco, CA",
+    "jobType": "All",
+    "skills": ["JavaScript", "Angular", "Node.js", "HTML", "CSS"]
+  },
+  {
+    "jobTitle": "Data Analyst",
+    "companyName": "Data Insights LLC",
+    "jobDescription": "Analyze complex data sets to identify trends and patterns. Prepare reports and visualizations to support business decisions. Work with stakeholders to understand data needs and provide actionable insights.",
+    "location": "New York, NY",
+    "jobType": "All",
+    "skills": ["SQL", "Python", "Excel", "Data Visualization", "Statistics"]
+  },
+  {
+    "jobTitle": "Project Manager",
+    "companyName": "Build It Right",
+    "jobDescription": "Oversee and manage construction projects from conception to completion. Ensure all projects are delivered on time, within scope, and within budget.",
+    "location": "Los Angeles, CA",
+    "jobType": "All",
+    "skills": [
+      "Project Management",
+      "Communication",
+      "Budgeting",
+      "Team Leadership",
+      "Time Management"
+    ]
+  },
+  {
+    "jobTitle": "Marketing Specialist",
+    "companyName": "BrandBoost",
+    "jobDescription": "Develop and implement marketing strategies to increase brand awareness and drive sales. Analyze market trends and measure the effectiveness of campaigns.",
+    "location": "Chicago, IL",
+    "jobType": "All",
+    "skills": [
+      "Digital Marketing",
+      "SEO",
+      "Content Creation",
+      "Analytics",
+      "Social Media"
+    ]
+  },
+  {
+    "jobTitle": "Customer Support Representative",
+    "companyName": "HelpDesk Solutions",
+    "jobDescription": "Provide excellent customer support through various channels. Resolve customer issues in a timely and effective manner. Maintain a high level of customer satisfaction.",
+    "location": "Boston, MA",
+    "jobType": "All",
+    "skills": [
+      "Customer Service",
+      "Communication",
+      "Problem-Solving",
+      "CRM Software",
+      "Time Management"
+    ]
+  }
+]

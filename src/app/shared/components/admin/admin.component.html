@@ -1,0 +1,69 @@
+<main>
+  <aside>
+    <ng-container *ngFor="let item of jobs">
+      <app-jboxitem
+        [job]="item"
+        (click)="selectItem(item)"
+        [class.selected]="item === selectedJob"
+      ></app-jboxitem>
+    </ng-container>
+  </aside>
+  <ng-template #noJobs>
+    <p>No jobs available.</p>
+  </ng-template>
+  <section class="job-details" *ngIf="jobs; else noJobs">
+    <form [formGroup]="jobForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="title">Job Title</label>
+        <input id="title" formControlName="title" type="text" />
+      </div>
+      <div>
+        <label for="companyName">Company Name</label>
+        <input id="companyName" formControlName="companyName" type="text" />
+      </div>
+      <div>
+        <label for="location">Location</label>
+        <input id="location" formControlName="location" type="text" />
+      </div>
+      <div>
+        <label for="workType">Work Type</label>
+        <input id="workType" formControlName="workType" type="text" />
+      </div>
+      <div>
+        <label for="jobType">Job Type</label>
+        <input id="jobType" formControlName="jobType" type="text" />
+      </div>
+      <div formGroupName="jobCategory">
+        <label for="categoryId">Job Category ID</label>
+        <input id="categoryId" formControlName="id" type="text" />
+        <label for="categoryName">Job Category Name</label>
+        <input id="categoryName" formControlName="name" type="text" />
+      </div>
+      <div>
+        <label for="educationQualification">Education Qualification</label>
+        <input
+          id="educationQualification"
+          formControlName="educationQualification"
+          type="text"
+        />
+      </div>
+      <div>
+        <label for="jobDescription">Job Description</label>
+        <input
+          id="jobDescription"
+          formControlName="jobDescription"
+          type="text"
+        />
+      </div>
+      <div>
+        <label for="payScale">Pay Scale</label>
+        <input id="payScale" formControlName="payScale" type="text" />
+      </div>
+      <div formArrayName="skills">
+        <label>Skills</label>
+        <button type="button" (click)="addSkill()">Add Skill</button>
+      </div>
+      <button type="submit" [disabled]="jobForm.invalid">Submit</button>
+    </form>
+  </section>
+</main>

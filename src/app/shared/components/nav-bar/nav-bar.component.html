@@ -1,0 +1,6 @@
+<header>
+  <a routerLink="/">Home</a>
+  <a routerLink="/admin">{{ signInLabel }}</a> <br />
+  <a *ngIf="isAdmin == true" (click)="onSignOut()" routerLink="/">Sign Out</a>
+  <br />
+</header>

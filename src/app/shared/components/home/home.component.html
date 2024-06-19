@@ -1,0 +1,47 @@
+<body>
+  <header>
+    <input type="text" placeholder="Job title, keyword, or company" />
+    <button>Find jobs</button>
+  </header>
+  <main>
+    <aside>
+      <ng-container *ngFor="let item of jobs">
+        <app-jboxitem
+          [job]="item"
+          (click)="selectItem(item)"
+          [class.selected]="item === selectedJob"
+        ></app-jboxitem>
+      </ng-container>
+    </aside>
+    <ng-template #noJobs>
+      <p>No jobs available.</p>
+    </ng-template>
+    <section class="job-details" *ngIf="jobs == undefined; else noJobs">
+      <h2>{{ selectedJob?.title }}</h2>
+      <button>Apply now</button>
+
+      <p>
+        {{ selectedJob?.companyName }}<br />{{ selectedJob?.location }} -
+        {{ selectedJob?.workType | camel }}
+      </p>
+
+      <p>{{ selectedJob?.payScale }} - {{ selectedJob?.jobType }}</p>
+      <div class="category">{{ selectedJob?.jobCategory?.name }}</div>
+      <div class="profile-insights">
+        <h3>Profile insights</h3>
+        <p>{{ selectedJob?.jobDescription }}</p>
+        <div class="skills">
+          <label>Skills</label>
+          <p *ngFor="let skill of selectedJob?.skills">
+            {{ skill }}
+          </p>
+        </div>
+        <br />
+        <div class="education">
+          <label>Education</label>
+          <p>{{ selectedJob?.educationQualification }}</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
