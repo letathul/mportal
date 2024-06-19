@@ -16,20 +16,20 @@
     <ng-template #noJobs>
       <p>No jobs available.</p>
     </ng-template>
-    <section class="job-details" *ngIf="jobs == undefined; else noJobs">
-      <h2>{{ selectedJob?.title }}</h2>
+    <section class="job-details" *ngIf="selectedJob != undefined; else noJobs">
+      <h2>{{ selectedJob.title }}</h2>
       <button>Apply now</button>
 
       <p>
-        {{ selectedJob?.companyName }}<br />{{ selectedJob?.location }} -
-        {{ selectedJob?.workType | camel }}
+        {{ selectedJob.companyName }}<br />{{ selectedJob.location }} -
+        {{ selectedJob.workType | camel }}
       </p>
 
-      <p>{{ selectedJob?.payScale }} - {{ selectedJob?.jobType }}</p>
+      <p>{{ selectedJob.payScale }} - {{ selectedJob.jobType }}</p>
       <div class="category">{{ selectedJob?.jobCategory?.name }}</div>
       <div class="profile-insights">
         <h3>Profile insights</h3>
-        <p>{{ selectedJob?.jobDescription }}</p>
+        <p>{{ selectedJob.jobDescription }}</p>
         <div class="skills">
           <label>Skills</label>
           <p *ngFor="let skill of selectedJob?.skills">
@@ -39,7 +39,7 @@
         <br />
         <div class="education">
           <label>Education</label>
-          <p>{{ selectedJob?.educationQualification }}</p>
+          <p>{{ selectedJob.educationQualification }}</p>
         </div>
       </div>
     </section>

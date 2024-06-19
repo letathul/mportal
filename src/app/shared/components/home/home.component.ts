@@ -25,7 +25,7 @@ export class HomeComponent {
   ) {}
 
   async ngOnInit(): Promise<void> {
-    this.jobs = this.sampledate.sampledata;
+    //this.jobs = this.sampledate.sampledata;
 
     this.jobs = await this.jobsserv.getAllJobs1();
 
@@ -34,5 +34,6 @@ export class HomeComponent {
 
   selectItem(item: Job) {
     this.selectedJob = item;
+    console.log(item);
   }
 }
