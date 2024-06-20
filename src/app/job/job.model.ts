@@ -1,21 +1,19 @@
 // src/app/job/job.model.ts
 export interface Job {
-  id: string;
+  id?: string;
   title: string;
   companyName: string;
   location: string;
   workType: string;
   jobType: string;
-  jobCategory: JobCategory;
+  jobCategory: string;
   educationQualification: string;
   jobDescription: string;
   payScale: string;
-  skills: string[];
+  skills: Skill[];
 }
-
-export interface JobCategory {
-  id: string;
-  name: string;
+export interface Skill {
+  skill: string;
 }
 
 export interface Mportal {

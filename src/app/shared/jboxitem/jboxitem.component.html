@@ -4,4 +4,5 @@
   <p class="salary">{{ job?.payScale }}</p>
   <p>{{ job?.jobType | camel }}</p>
   <p>{{ job?.workType | camel }}</p>
+  <button *ngIf="isAdmin == true" (click)="DeletethisItem()">Delete</button>
 </div>

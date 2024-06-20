@@ -26,14 +26,14 @@
       </p>
 
       <p>{{ selectedJob.payScale }} - {{ selectedJob.jobType }}</p>
-      <div class="category">{{ selectedJob?.jobCategory?.name }}</div>
+      <div class="category">{{ selectedJob.jobCategory }}</div>
       <div class="profile-insights">
         <h3>Profile insights</h3>
         <p>{{ selectedJob.jobDescription }}</p>
         <div class="skills">
           <label>Skills</label>
           <p *ngFor="let skill of selectedJob?.skills">
-            {{ skill }}
+            {{ skill.skill }}
           </p>
         </div>
         <br />

@@ -22,81 +22,105 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrl: './admin.component.css',
 })
 export class AdminComponent {
-  selectedJob: Job | undefined;
-  jobs: Job[] | undefined;
-
   jobForm: FormGroup;
-  jobId: string | null = null;
+  jobs: Job[] = [];
+
   constructor(
     private fb: FormBuilder,
-    private router: Router,
-    private route: ActivatedRoute,
-    protected jobService: GetJobServiceService,
-    private sampledate: SamlpeDataService,
-    private jobsserv: GetJobServiceService
+    private jobService: GetJobServiceService
   ) {
     this.jobForm = this.fb.group({
+      id: [''],
       title: ['', Validators.required],
       companyName: ['', Validators.required],
       location: ['', Validators.required],
       workType: ['', Validators.required],
       jobType: ['', Validators.required],
-      jobCategory: this.fb.group({
-        id: ['', Validators.required],
-        name: ['', Validators.required],
-      }),
+      jobCategory: ['', Validators.required],
       educationQualification: ['', Validators.required],
       jobDescription: ['', Validators.required],
       payScale: ['', Validators.required],
-      skills: this.fb.array([], Validators.required),
+      skills: this.fb.array([this.createSkillFormGroup()]),
     });
   }
 
-  async loadJob(): Promise<void> {
-    if (this.jobId) {
-      const job = await this.jobService.getJob(this.jobId);
-      if (job) {
-        this.jobForm.patchValue(job);
-      }
+  onSubmit(): void {
+    const job: Job = this.jobForm.value;
+    if (job.id) {
+      this.jobService.updateJob(job.id, job).then(() => {
+        this.loadJobs();
+      });
+    } else {
+      this.jobService.addJob(job).then(() => {
+        this.loadJobs();
+      });
     }
+    this.jobForm.reset();
   }
 
-  async onSubmit(): Promise<void> {
-    if (this.jobForm.valid) {
-      const job: Job = this.jobForm.value;
-      if (this.jobId) {
-        await this.jobService.updateJob(this.jobId, job);
-      } else {
-        await this.jobService.createJob(job);
-      }
-      this.router.navigate(['/jobs']); // Adjust the route as needed
-    }
+  ngOnInit(): void {
+    this.loadJobs();
   }
 
-  async ngOnInit(): Promise<void> {
-    this.jobs = this.sampledate.sampledata;
-
-    ///this.jobs = await this.jobsserv.getAllJobs1();
-
-    this.selectedJob = this.jobs.at(0);
-
-    this.jobId = this.route.snapshot.paramMap.get('id');
-    if (this.jobId) {
-      this.loadJob();
-    }
+  createSkillFormGroup(): FormGroup {
+    return this.fb.group({
+      skill: ['', Validators.required],
+    });
   }
+
+  get skills(): FormArray {
+    return this.jobForm.get('skills') as FormArray;
+  }
+
   addSkill(): void {
-    (this.jobForm.get('skills') as FormArray).push(
-      new FormControl('', Validators.required)
-    );
+    this.skills.push(this.createSkillFormGroup());
   }
 
   removeSkill(index: number): void {
-    (this.jobForm.get('skills') as FormArray).removeAt(index);
+    this.skills.removeAt(index);
   }
+
+  loadJobs(): void {
+    this.jobService.getJobs().subscribe((jobs) => (this.jobs = jobs));
+  }
+
+  loadJob(id: string): void {
+    this.jobService.getJob1(id).subscribe((job) => {
+      if (job) this.jobForm.patchValue(job);
+      this.skills.clear();
+
+      if (job)
+        job.skills.forEach((skill) => {
+          this.skills.push(
+            this.fb.group({ skill: [skill.skill, Validators.required] })
+          );
+        });
+    });
+  }
+
+  saveJob(): void {
+    const job: Job = this.jobForm.value;
+    if (job.id) {
+      this.jobService.updateJob(job.id, job);
+    } else {
+      this.jobService.addJob(job);
+    }
+    this.jobForm.reset();
+  }
+
+  deleteJob(id: string | undefined): void {
+    if (id) this.jobService.deleteJob(id);
+  }
+  selectedJob: Job | undefined;
   selectItem(item: Job) {
-    console.log(item);
-    this.jobId = item.id;
     this.selectedJob = item;
+    if (item.id) this.loadJob(item.id);
+  }
+
+  handleEvent(data: { value: string }) {
+    console.log('Received value from child:', data.value);
+    if (data.value) {
+      this.deleteJob(data.value);
+    }
   }
 }

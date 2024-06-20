@@ -3,7 +3,9 @@
     <ng-container *ngFor="let item of jobs">
       <app-jboxitem
         [job]="item"
+        [isAdmin]="true"
         (click)="selectItem(item)"
+        (notifyParent)="handleEvent($event)"
         [class.selected]="item === selectedJob"
       ></app-jboxitem>
     </ng-container>
@@ -33,12 +35,16 @@
         <label for="jobType">Job Type</label>
         <input id="jobType" formControlName="jobType" type="text" />
       </div>
-      <div formGroupName="jobCategory">
-        <label for="categoryId">Job Category ID</label>
+      <div>
+        <label for="jobCategory">jobCategory</label>
+        <input id="jobCategory" formControlName="jobType" type="text" />
+      </div>
+      <!--  <div formGroupName="jobCategory">
+       <label for="categoryId">Job Category ID</label>
         <input id="categoryId" formControlName="id" type="text" />
         <label for="categoryName">Job Category Name</label>
         <input id="categoryName" formControlName="name" type="text" />
-      </div>
+      </div>-->
       <div>
         <label for="educationQualification">Education Qualification</label>
         <input
@@ -59,11 +65,24 @@
         <label for="payScale">Pay Scale</label>
         <input id="payScale" formControlName="payScale" type="text" />
       </div>
-      <div formArrayName="skills">
+      <!--   <div formArrayName="skills">
         <label>Skills</label>
+
+        <button type="button" (click)="addSkill()">Add Skill</button>
+      </div> -->
+
+      <div formArrayName="skills">
+        <div *ngFor="let skill of skills.controls; let i = index">
+          <div [formGroupName]="i">
+            <label for="skill">Skill</label>
+            <input formControlName="skill" id="skill" />
+            <button type="button" (click)="removeSkill(i)">Remove Skill</button>
+          </div>
+        </div>
         <button type="button" (click)="addSkill()">Add Skill</button>
       </div>
-      <button type="submit" [disabled]="jobForm.invalid">Submit</button>
+
+      <button type="submit">Submit</button>
     </form>
   </section>
 </main>
